@@ -1,0 +1,22 @@
+info:
+  name: HMRCUK
+  type: folder
+  seq: 3
+
+request:
+  auth:
+    type: oauth2
+    flow: client_credentials
+    accessTokenUrl: https://test-api.service.hmrc.gov.uk/oauth/token
+    credentials:
+      clientId: D818xwuE6vwCH799iMXI92oy3GYo
+      clientSecret: 65d0bfac-7837-48d1-b466-7ce3b9060152
+      placement: body
+    scope: read:vat
+    tokenConfig:
+      id: credentials
+      placement:
+        header: Bearer
+      source: access_token
+    settings:
+      autoFetchToken: true

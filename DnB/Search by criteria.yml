@@ -1,0 +1,41 @@
+info:
+  name: Search by criteria
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/v1/search/criteria?candidateMaximumQuantity=10&pageSize=10"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer
+      disabled: true
+  params:
+    - name: candidateMaximumQuantity
+      value: "10"
+      type: query
+    - name: pageSize
+      value: "10"
+      type: query
+    - name: countryISOAlpha2Code
+      value: US
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        //     "registrationNumbers": ["BE0537815213"]
+        //   "duns": 470899016
+        "searchTerm": "test"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,23 @@
+info:
+  name: Check_UK_VAT
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://test-api.service.hmrc.gov.uk/organisations/vat/check-vat-number/lookup/:vat
+  headers:
+    - name: Accept
+      value: application/vnd.hmrc.2.0+json
+  params:
+    - name: vat
+      value: "710882182"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

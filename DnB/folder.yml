@@ -1,0 +1,25 @@
+info:
+  name: DnB
+  type: folder
+  seq: 1
+
+request:
+  auth:
+    type: oauth2
+    flow: client_credentials
+    accessTokenUrl: https://plus.dnb.com/v3/token
+    credentials:
+      clientId: 7f4e8423e34a4122917b3591f58cd84b540afca2adb24ae6a6f42422480af735
+      clientSecret: b0d3350f993847aebc8ff9d83a0ac3889db87b521ac6465583837c8e7ae8b52e
+      placement: basic_auth_header
+    tokenConfig:
+      id: credentials
+      placement:
+        header: Bearer
+      source: access_token
+    settings:
+      autoFetchToken: true
+      autoRefreshToken: false
+  variables:
+    - name: baseUrl
+      value: https://plus.dnb.com

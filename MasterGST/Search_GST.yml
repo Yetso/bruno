@@ -1,0 +1,28 @@
+info:
+  name: Search_GST
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://api.whitebooks.in/public/search?gstin=24ALBPM3174D1ZI&email=jva@odoo.com
+  headers:
+    - name: client_id
+      value: GSTP21591c71-bd5d-4ee4-8653-4fb3dcdb341a
+    - name: client_secret
+      value: GSTP100d2f2c-6774-4fac-8755-518d6e63ad14
+  params:
+    - name: gstin
+      value: 24ALBPM3174D1ZI
+      type: query
+    - name: email
+      value: jva@odoo.com
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
